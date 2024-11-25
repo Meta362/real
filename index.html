@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wish App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCvrKKRUndCEnMPpqhm1_8XxlP2nGtW8EU",
+          authDomain: "birthday-wishes-app-ec5f3.firebaseapp.com",
+          databaseURL: "https://birthday-wishes-app-ec5f3-default-rtdb.firebaseio.com",
+          projectId: "birthday-wishes-app-ec5f3",
+          storageBucket: "birthday-wishes-app-ec5f3.firebasestorage.app",
+          messagingSenderId: "543412198995",
+          appId: "1:543412198995:web:374634d7ee06f32dceb0a6",
+          measurementId: "G-6NHE6V2WBY"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+  <div class="container">
+    <h1>ជូនពរថ្ងៃខួបកំណើត</h1>
+
+    <!-- Wish Form -->
+    <div class="wish-form">
+      <h2>មានឱកាសឈ្នះ 16 Pro max</h2>
+      <input type="text" id="username" placeholder="ឈ្មោះរបស់អ្នក">
+      <textarea id="wish" placeholder="ជូនពរកាន់តែច្រើនឱកាសឈ្នះរង្វាន់កាន់តែច្រើន..."></textarea>
+      <center><button onclick="submitWish()">Submit Wish</button></center>
+    </div>
+
+    <!-- Admin View -->
+    <div class="admin-section">
+      <h2>Admin Login (ព្រហ្ម មេត្តា)</h2>
+      <input type="password" id="admin-password" placeholder="គ្មានភារៈកិច្ចហាមចូល">
+      <center><button onclick="viewWishes()">View All Wishes</button></center>
+      <center><button onclick="clearWishes()">Clear All Wishes</button></center>
+      <div id="wish-list" style="display: none;">
+        <h3>All Wishes</h3>
+        <ul id="wishes"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
